@@ -1,0 +1,28 @@
+﻿@model List<Windesheim.Social.Objects.Group>
+
+@{
+    ViewBag.Title = "Groepen";
+}
+
+<h2>Groepen</h2>
+<div>
+    @foreach (var group in Model)
+    { 
+        <table>
+            <tr>
+                <td>Naam</td>
+                <td>@group.Name</td>
+            </tr>
+            <tr>
+                <td>Omschrijving</td>
+                <td>@group.Description</td>
+            </tr>
+            <tr>
+                <td>Toegang</td>
+                <td>@group.AccessType.ToString()</td>
+            </tr>
+        </table>
+    }
+    <br />
+    <a href="/Group/Create" class="button">Nieuwe groep</a>
+</div>
