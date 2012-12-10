@@ -1,0 +1,45 @@
+﻿@model List<Windesheim.Social.Objects.GroupExtended>
+
+@{
+    ViewBag.Title = "Groepen";
+}
+<div>
+    <table id="groupsTable">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Omschrijving</th>
+                <th>Toegang</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var group in Model)
+        { 
+            <tr>
+                <td>@group.Name</td>
+                <td>@group.Description</td>
+                <td>@group.AccessType.ToString()</td>
+                <td>@if (group.IsEnrolled)
+                    {
+                        <i>Ingeschreven</i>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Inschrijven", "Enroll", new { groupId = group.Id })
+                    }
+                </td>
+                <td>@Html.ActionLink("Bekijken", "View", new { groupId = group.Id })</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Group/Create" class="button">Nieuwe groep</a>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/Custom/Groups.js")
+}
+

@@ -1,0 +1,54 @@
+﻿@model Windesheim.Social.Objects.Group
+
+@{
+    ViewBag.Title = "Nieuwe groep";
+}
+
+<h2>Nieuwe groep</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Groep</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AccessType)
+        </div>
+        <div class="editor-field">
+            <select id="AccessType" name="AccessType">
+                <option value="0">Open</option>
+                <option value="1">Gesloten</option>
+                <option value="2">Geheim</option>
+            </select>
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Terug naar overzicht", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

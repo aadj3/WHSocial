@@ -1,0 +1,36 @@
+﻿<script type="text/javascript" id="tpl_message">
+<![CDATA[
+    <%
+        var isDeletable = "";
+        if(this.IsOwner)
+            isDeletable = "deletable";
+    %>
+    <div class="message <%= isDeletable %>" id="message_<%=this.Id %>">
+        <a href="/User/Profile?userId=<%= this.User.UserId %>"><%=this.User.UserName %></a><span class="small"> op <%=FormatJsonDate(this.PostDate)%></span>
+        <a class="deleteMessage" id="deleteMessage_<%=this.Id %>" href="javascript:;"><img height="15px" src="/Content/Images/delete.ico"></img></a>
+        <div class="messageValue">
+            <%=this.Value %>    
+        </div>
+        <% if(this.Children){ %>
+            <%= $.jqote("#tpl_childMessage", this.Children) %>
+        <% } %>
+        <div class="reactToMessage"><input type="text" class="reaction" /> <button class="button btn_react">reageer</button> </div>
+    </div>
+]]>
+</script>
+<script type="text/javascript" id="tpl_childMessage">
+<![CDATA[
+    <%
+        var isDeletable = "";
+        if(this.IsOwner)
+            isDeletable = "deletable";
+    %>
+    <div class="message tabbed <%= isDeletable %>" id="message_<%=this.Id %>">
+        <a href="/User/Profile?userId=<%= this.User.UserId %>"><%=this.User.UserName %></a><span class="small"> op <%=FormatJsonDate(this.PostDate)%></span>
+        <a class="deleteMessage" id="deleteMessage_<%=this.Id %>" href="javascript:;"><img height="15px" src="/Content/Images/delete.ico"></img></a>
+        <div class="messageValue">
+            <%=this.Value %>    
+        </div>
+    </div>
+]]>
+</script>

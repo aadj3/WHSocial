@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Windesheim.Social.Objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Windesheim.Social.Objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:2411/SocialService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="LoginCredentials">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="LoginCredentials" nillable="true" type="tns:LoginCredentials" />
+  <xs:complexType name="FacebookLoginCredentials">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LoginCredentials">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FacebookLoginCredentials" nillable="true" type="tns:FacebookLoginCredentials" />
+  <xs:complexType name="Authentication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ticket" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="ValidTill" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Authentication" nillable="true" type="tns:Authentication" />
+  <xs:complexType name="Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessType" type="tns:GroupAccess" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtendedProperties" nillable="true" type="tns:ArrayOfExtendedProperty" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:simpleType name="GroupAccess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Closed" />
+      <xs:enumeration value="Secret" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GroupAccess" nillable="true" type="tns:GroupAccess" />
+  <xs:complexType name="ArrayOfExtendedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtendedProperty" nillable="true" type="tns:ExtendedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExtendedProperty" nillable="true" type="tns:ArrayOfExtendedProperty" />
+  <xs:complexType name="ExtendedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtendedProperty" nillable="true" type="tns:ExtendedProperty" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="ArrayOfGroupExtended">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupExtended" nillable="true" type="tns:GroupExtended" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupExtended" nillable="true" type="tns:ArrayOfGroupExtended" />
+  <xs:complexType name="GroupExtended">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Group">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsEnrolled" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GroupExtended" nillable="true" type="tns:GroupExtended" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfMessage" />
+      <xs:element minOccurs="0" name="GroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsOwner" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PostDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>

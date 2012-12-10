@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SocialService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2411/SocialService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2411/SocialService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2411/SocialService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Windesheim.Social.Objects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISocialService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_AddGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_AddGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetGroupsExtended_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsExtended" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetGroupsExtended_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_EnrollInGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnrollInGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_EnrollInGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnrollInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_PostMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_PostMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_DeleteMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_DeleteMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetRelevantMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelevantMessages" />
+  </wsdl:message>
+  <wsdl:message name="ISocialService_GetRelevantMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelevantMessagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISocialService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthentication/Login" message="tns:ISocialService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthentication/LoginResponse" message="tns:ISocialService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/AddGroup" message="tns:ISocialService_AddGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/AddGroupResponse" message="tns:ISocialService_AddGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/GetGroups" message="tns:ISocialService_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/GetGroupsResponse" message="tns:ISocialService_GetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/GetGroup" message="tns:ISocialService_GetGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/GetGroupResponse" message="tns:ISocialService_GetGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsExtended">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/GetGroupsExtended" message="tns:ISocialService_GetGroupsExtended_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/GetGroupsExtendedResponse" message="tns:ISocialService_GetGroupsExtended_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrollInGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/EnrollInGroup" message="tns:ISocialService_EnrollInGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/EnrollInGroupResponse" message="tns:ISocialService_EnrollInGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/PostMessage" message="tns:ISocialService_PostMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/PostMessageResponse" message="tns:ISocialService_PostMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/GetMessages" message="tns:ISocialService_GetMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/GetMessagesResponse" message="tns:ISocialService_GetMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/DeleteMessage" message="tns:ISocialService_DeleteMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/DeleteMessageResponse" message="tns:ISocialService_DeleteMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelevantMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroups/GetRelevantMessages" message="tns:ISocialService_GetRelevantMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroups/GetRelevantMessagesResponse" message="tns:ISocialService_GetRelevantMessages_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISocialService" type="tns:ISocialService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAuthentication/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://tempuri.org/IGroups/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/IGroups/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroup">
+      <soap:operation soapAction="http://tempuri.org/IGroups/GetGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsExtended">
+      <soap:operation soapAction="http://tempuri.org/IGroups/GetGroupsExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrollInGroup">
+      <soap:operation soapAction="http://tempuri.org/IGroups/EnrollInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostMessage">
+      <soap:operation soapAction="http://tempuri.org/IGroups/PostMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://tempuri.org/IGroups/GetMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <soap:operation soapAction="http://tempuri.org/IGroups/DeleteMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelevantMessages">
+      <soap:operation soapAction="http://tempuri.org/IGroups/GetRelevantMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SocialService">
+    <wsdl:port name="BasicHttpBinding_ISocialService" binding="tns:BasicHttpBinding_ISocialService">
+      <soap:address location="http://localhost:2411/SocialService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

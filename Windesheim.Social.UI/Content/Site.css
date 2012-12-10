@@ -1,0 +1,235 @@
+﻿/* Basics
+-----------------------------------------------------------*/
+
+html
+{
+    height: 100%;
+}
+
+body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #666;
+    background-color: #fff;
+    width: 960px;
+    margin: 0 auto;
+    
+    background: #f0f9ff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f0f9ff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+a
+{
+    color: inherit;
+    text-decoration: underline;
+    font-style:italic;
+}
+
+#container
+{
+    padding: 5px;
+    margin-top: 10px;
+}
+
+ul li
+{
+    list-style-type: none;
+}
+
+.button {
+    -moz-box-shadow:inset 0px 1px 50px 0px #bbdaf7;
+    -webkit-box-shadow:inset 0px 1px 50px 0px #bbdaf7;
+    box-shadow:inset 0px 1px 50px 0px #bbdaf7;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+    background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+    background-color:#79bbff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:2px 3px 1px #528ecc;
+}.button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+    background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+    background-color:#378de5;
+}.button:active {
+    position:relative;
+    top:1px;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset 
+{
+    border: 0px;
+    border-top: 5px solid #fff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-style: italic;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.small
+{
+    font-size: 10px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for header
+-----------------------------------------------------------*/
+
+#header
+{
+    width: 940px;
+    height:115px;
+}
+
+#header, #container
+{
+    border: 5px solid #FFF;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    padding: 5px;
+}
+
+#header-top
+{
+    width: 100%;
+    height: 50px;
+}
+
+#header-top-left
+{
+    float:left;
+    width: 120px;
+    height: 110px;
+}
+
+#header-top-right
+{
+    float: left;
+    height: 50px;
+    width: 820px;
+}
+
+#header-right
+{
+    float: right;
+    margin-top: 13px;
+}
+
+#header-left
+{
+    float:left;
+}
+
+#navigation
+{
+    height: 50px;
+}
+
+#navigationbuttons
+{
+    float: left;
+}
+
+#navigationbuttons li
+{
+    display: inline-block;
+}
+
+/* Styles for messages on group page
+-----------------------------------------------------------*/
+div.message
+{
+    width: auto;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #FFF;
+}
+
+div.message.tabbed
+{
+    margin-left: 15px;
+}
+
+a.deleteMessage img
+{
+    margin-bottom: -4px;
+}
+
+.reactToMessage button.button
+{
+    padding: 5px;
+}

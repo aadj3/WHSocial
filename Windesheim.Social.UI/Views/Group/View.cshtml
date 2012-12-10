@@ -1,0 +1,29 @@
+﻿@model Windesheim.Social.Objects.Group
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>@Model.Name</h2>
+<i>@Model.Description</i>
+<br />
+
+<fieldset><legend>Nieuw bericht</legend>
+    <div id="newMessage">
+        <input type="text" id="txt_newMessage"></textarea>
+        <button class="button" id="btn_newMessage">Plaats bericht</button>
+    </div>
+</fieldset>
+<fieldset><legend>Berichten</legend>
+    <div id="messages">
+    
+    </div>
+</fieldset>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        var groupId = @Model.Id;
+    </script>
+    @Scripts.Render("~/Scripts/Custom/GroupView.js")
+}

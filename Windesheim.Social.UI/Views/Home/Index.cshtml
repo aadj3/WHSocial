@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="loading" style="text-align: center"><img src="/Content/Images/ajax-loader.gif" alt="loading" title="loading" /></div>
+<div class="container" style="display:none">
+    <fieldset><legend>Actuele conversaties</legend>
+        <div id="messages">
+        
+        </div>
+    </fieldset>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/Custom/Home.js")
+}
